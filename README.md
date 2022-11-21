@@ -15,7 +15,7 @@ npm run serve
 ```
 ##### node
 ```
-node i
+node index
 ```
 
 ### Compiles and minifies for production
