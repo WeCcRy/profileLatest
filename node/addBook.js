@@ -6,8 +6,7 @@ const addBookSql="INSERT INTO bookshelf (`year`, `name`, `editor`, `type`, `tags
 // 查找是否存在该条ISBN
 const searchBookIsExistSql="SELECT * from bookshelf where ISBN=?"
 // 添加只能添加到当年中
-const year="2022"
-// const year="2023"
+const year=new Date().getFullYear()
 const searchBookIsExist=(ISBN)=>{
     return new Promise((resolve,reject)=>{
         db.query(searchBookIsExistSql,ISBN,(err,results)=>{

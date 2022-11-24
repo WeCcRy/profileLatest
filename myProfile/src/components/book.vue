@@ -28,7 +28,7 @@
         <a-col :span="18"></a-col>
         <a-col :span="1">
           <!--        只有在当前年才可以实现添加-->
-          <a-button v-if="year==2022" type="primary" size="small" @click="showModal('add')">
+          <a-button v-if="year==currentYear" type="primary" size="small" @click="showModal('add')">
             <template #icon>
               <plus-outlined/>
             </template>
@@ -224,6 +224,9 @@ export default defineComponent({
     PlusOutlined,
   },
   setup() {
+    // 当前年份
+    const currentYear=new Date().getFullYear()
+    // 可编辑年份
     let year = ref("2022")
     let bookList = ref([])
     let bookDetail = ref("")
@@ -492,6 +495,7 @@ export default defineComponent({
       bookDetail,
       photoUrl,
       year,
+      currentYear,
       columns,
       handleMenuClick,
       bookClear,
