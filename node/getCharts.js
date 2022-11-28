@@ -1,13 +1,11 @@
 const db=require("./db")
 
-const getTotalBooks2021Sql="SELECT * from bookshelf where year=2021&&status=1"
-const getTotalBooks2022Sql="SELECT * from bookshelf where year=2022&&status=1"
-const getTotalBooks2023Sql="SELECT * from bookshelf where year=2023&&status=1"
+const getTotalBooksSql="SELECT * from bookshelf where year=?&&status=1"
 const getTotalAuthorNationSql="select editor from bookshelf where year=?&&status=1"
 const getTotalTagsSql="select tags from bookshelf where year=?&&status=1"
 const getTotalBooks2021=()=>{
     return new Promise((resolve,reject)=>{
-        db.query(getTotalBooks2021Sql,(err,results)=>{
+        db.query(getTotalBooksSql,["2021"],(err,results)=>{
             resolve(results.length)
         })
     })
@@ -15,7 +13,7 @@ const getTotalBooks2021=()=>{
 
 const getTotalBooks2022=()=>{
     return new Promise((resolve,reject)=>{
-        db.query(getTotalBooks2022Sql,(err,results)=>{
+        db.query(getTotalBooksSql,["2022"],(err,results)=>{
             resolve(results.length)
         })
     })
@@ -23,7 +21,7 @@ const getTotalBooks2022=()=>{
 
 const getTotalBooks2023=()=>{
     return new Promise((resolve,reject)=>{
-        db.query(getTotalBooks2023Sql,(err,results)=>{
+        db.query(getTotalBooksSql,["2023"],(err,results)=>{
             resolve(results.length)
         })
     })
