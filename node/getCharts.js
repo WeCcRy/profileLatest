@@ -59,6 +59,7 @@ const getTotalAuthorNation=(year)=>{
                 .replace(/西/g,"西班牙")
                 .replace(/哥/g,"哥伦比亚")
                 .replace(/加/g,"加拿大")
+                .replace(/阿/g,"阿根廷")
             )
             //适配前端所需格式
             let finalResult=[]

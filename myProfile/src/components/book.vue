@@ -7,7 +7,7 @@
             <!--          Pantone年度色！-->
             <SmileTwoTone v-if="year=='2021'" twoToneColor="#F5DF4D" style="margin-left: 15px"/>
             <SmileTwoTone v-if="year=='2022'" twoToneColor="#6667AB" style="margin-left: 15px"/>
-            <SmileTwoTone v-if="year=='2023'" twoToneColor="#000000" style="margin-left: 15px"/>
+            <SmileTwoTone v-if="year=='2023'" twoToneColor="#BB2649" style="margin-left: 15px"/>
           </a-typography-title>
         </a-col>
         <a-col :span="1" style="margin-bottom: 15px">
@@ -227,7 +227,7 @@ export default defineComponent({
     // 当前年份
     const currentYear=new Date().getFullYear()
     // 可编辑年份
-    let year = ref("2022")
+    let year = ref(currentYear)
     let bookList = ref([])
     let bookDetail = ref("")
     let photoUrl = ref("")
